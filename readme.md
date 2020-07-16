@@ -29,7 +29,7 @@ to make Laravel more enjoyable as an API framework.
 First clone the repository
 
 ```bash
-git clone https://github.com/esbenp/larapi my-api
+git clone https://github.com/zaffron/larapi my-api
 ```
 
 Install dependencies
@@ -38,7 +38,7 @@ Install dependencies
 composer install
 ```
 
-Copy the `.env` file an create an application key
+Copy the `.env` file and create an application key
 
 ```
 cp .env.example .env && php artisan key:generate
@@ -50,7 +50,7 @@ Migrate the tables.
 php artisan migrate
 ```
 
-Larapi comes with Passport include as the default authenticatin method. You should now install it using this command.
+Larapi comes with Passport include as the default authentication method. You should now install it using this command.
 
 ```
 php artisan passport:install
@@ -69,10 +69,10 @@ If you want to save it elsewhere or change the naming be sure to modify the Logi
 
 ## Test installation
 
-You can quickly test if the authentication works by creating an user using the include command.
+You can quickly test if the authentication works by creating a user using the included command.
 
 ```bash
-php artisan users:add Esben esben@esben.dk 1234
+php artisan users:add Zaffron avinashrijal@gmail.com 1234
 ```
 
 Now serve your application and try to request a token using cURL
@@ -81,7 +81,7 @@ Now serve your application and try to request a token using cURL
 php artisan serve
 curl -X POST http://localhost:8000/login -H 'Content-Type:application/json' -d '
 {
-    "email":"esben@esben.dk",
+    "email":"avinashrijal@gmail.com",
     "password":"1234"
 }'
 ```
@@ -101,15 +101,15 @@ curl http://localhost:8000/users -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhb
 This should return a response like so
 
 ```json
-{"users":[{"id":1,"name":"Esben","email":"esben@esben.dk","created_at":"2017-03-19 19:59:15","updated_at":"2017-03-19 19:59:15"}]}
+{"users":[{"id":1,"name":"Zaffron","email":"avinashrijal@gmail.com","created_at":"2017-03-19 19:59:15","updated_at":"2017-03-19 19:59:15"}]}
 ```
 
 You can refresh a new token by requesting `POST /login/refresh` and logout using `POST /logout`
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/esbenp/architect/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/zaffron/larapi/blob/master/CONTRIBUTING.md) for details.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/esbenp/architect/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/zaffron/larapi/blob/master/LICENSE) for more information.
